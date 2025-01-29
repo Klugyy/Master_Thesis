@@ -1,0 +1,37 @@
+Source  Measured
+Symmetry  PlaneSymmetrical
+SpectralContent  Monochrome
+ScatterType  BRDF
+SampleRotation  90
+0
+AngleOfIncidence  5
+0	15	30	45	60
+ScatterAzimuth 2
+0	180
+ScatterRadial 19
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+
+Monochrome
+DataBegin
+TIS 0.055141
+0	0.019	0.019	0.022	0.028	0.032	0.018	0.013	0.012	0.012	0.012	0.013	0.014	0.015	0.016	0.018	0.027	0.06	0
+0	0.02	0.019	0.021	0.026	0.034	0.021	0.013	0.012	0.011	0.011	0.012	0.013	0.014	0.014	0.015	0.021	0.045	0
+TIS 0.066031

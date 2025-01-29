@@ -1,0 +1,7 @@
+Source  Measured
+Symmetry  PlaneSymmetrical
+SpectralContent  Monochrome
+ScatterType  BRDF
+SampleRotation  90
+0
+AngleOfIncidence  5
