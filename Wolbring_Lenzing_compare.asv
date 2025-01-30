@@ -342,12 +342,12 @@ lgd = legend({'LPE Green','LPE Red',' LPE Gold'},'FontSize',18);
 % Initializing color variables. 
 Freq = 3;
  S = Wol.sample_rgb(:,:,5); % Green = 2, Yellow = 3, Terracotta = 4, Blue = 1
-S_L = Lenz.sample_rgb(:,:,12); % Green = 1, Gold = 2, Terracotta = 4, Reference = 3
+S_L = Lenz.sample_rgb(:,:,8); % Green = 1, Gold = 2, Terracotta = 4, Reference = 3
 S_enc = Encaps.sample_rgb(:,:,1);
 [L_Wol,a_Wol,b_Wol,rgb_Wol] = LAB_3D(Wol.sample_Lab(:,:,5),Wol.sample_rgb(:,:,5)); % Green
 E_00_M_Wol = create_cmatrix(Wol.sample_Lab,Freq,4,'Single');
-[L_Lenz,a_Lenz,b_Lenz,rgb_Lenz] = LAB_3D(Lenz.sample_Lab(:,:,12),Lenz.sample_rgb(:,:,12)); % Green 
-E_00_M_Lenz = create_cmatrix(Lenz.sample_Lab,Freq,12,'Single');
+[L_Lenz,a_Lenz,b_Lenz,rgb_Lenz] = LAB_3D(Lenz.sample_Lab(:,:,8),Lenz.sample_rgb(:,:,8)); % Green 
+E_00_M_Lenz = create_cmatrix(Lenz.sample_Lab,Freq,8,'Single');
 [L_Enc,a_Enc,b_Enc,rgb_Enc] = LAB_3D(Encaps.sample_Lab(:,:,1),Encaps.sample_rgb(:,:,1));
 E_00_M_Enc = create_cmatrix(Encaps.sample_Lab,Freq,1,'Single');
 E00_compare = create_ccomparematrix(Wol.sample_Lab,Lenz.sample_Lab,Freq,2,'Full'); %create_ccomparematrix(Encaps.sample_Lab,Lenz.sample_Lab,Freq,2,'Full');
@@ -459,7 +459,7 @@ ah_angles = repmat((Wol.white_rel_sensor_ang(:,1)),numel(Wol.f_ellipse_angles(1,
              end
         end
     end
-q =  ismember(Lenz.white_rel_sensor_ang(:,1),ah_angles(1:Freq:37));
+q =  ismember(Lenz.white_rel_sensor_ang(:,1),ah_angles(1:Freq:37));    
 idx_angles = find(q);
 
 result = [];
@@ -517,7 +517,7 @@ figure;
 imagesc(E_00_M_Lenz)
 for i = 1:size(C_ab_Lenz(1:Freq:end,:), 1)
     for j = 1:size(E_00_M_Lenz, 2)
-        squeeze(abs(rbg_new_Lenz(idx_angles(i), j, :)))
+    %    squeeze(abs(rbg_new_Lenz(idx_angles(i), j, :)))
         % Draw a rectangle for each cell with the specified color
         color_condition = squeeze(abs(rbg_new_Lenz(idx_angles(i), j, :)));
         rectangle('Position', [j-0.5, i-0.5, 1, 1], 'FaceColor', squeeze(abs(rbg_new_Lenz(idx_angles(i), j, :))), 'EdgeColor', 'none');

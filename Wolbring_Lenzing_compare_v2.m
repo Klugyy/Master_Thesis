@@ -337,11 +337,11 @@ linkaxes([ax1,ax2],'x')
 % Initializing color variables. 
 Freq = 3;
  S = Wol.sample_rgb(:,:,2); % Green = 2, Yellow = 3, Terracotta = 4, Blue = 1
-S_L = Lenz.sample_rgb(:,:,1); % Green = 1, Gold = 2, Terracotta = 4, Reference = 3
+S_L = Lenz.sample_rgb(:,:,12); % Green = 1, Gold = 2, Terracotta = 4, Reference = 3
 [L_Wol,a_Wol,b_Wol,rgb_Wol] = LAB_3D(Wol.sample_Lab(:,:,2),Wol.sample_rgb(:,:,2)); % Green
 E_00_M_Wol = create_cmatrix(Wol.sample_Lab,Freq,2,'Single');
-[L_Lenz,a_Lenz,b_Lenz,rgb_Lenz] = LAB_3D(Lenz.sample_Lab(:,:,1),Lenz.sample_rgb(:,:,1)); % Green 
-E_00_M_Lenz = create_cmatrix(Lenz.sample_Lab,Freq,1,'Single');
+[L_Lenz,a_Lenz,b_Lenz,rgb_Lenz] = LAB_3D(Lenz.sample_Lab(:,:,12),Lenz.sample_rgb(:,:,12)); % Green 
+E_00_M_Lenz = create_cmatrix(Lenz.sample_Lab,Freq,12,'Single');
 
 %numericMatrix = size(cell2mat(Wol.sample_rgb(:,:,2)));
 %rgb_Wol = reshape(numericMatrix, [], 3);
@@ -532,7 +532,7 @@ ax1.LabelFontSizeMultiplier = 1.8;
 ax2.YAxis.FontSize = 18;
 ax2.XAxis.FontSize = 18;
 ax2.LabelFontSizeMultiplier = 1.8;
-
+%%
 fig = figure;
 ax1 = subplot(2,1,1);
 scatter(a_Lenz,L_Lenz,60,abs(rgb_Lenz),'filled')
